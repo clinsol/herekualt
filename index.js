@@ -84,7 +84,8 @@ const server=http.createServer((request, response, next) => {
     
 });
 
-server.listen(PORT,hostname,()=>{
-    console.log(`Server is running on http://${hostname}:${PORT}`);
-});
+ server.listen(PORT, '0.0.0.0',hostname,err => {
+    if (err) throw err;
+    console.log(`Listening on port ${port}`)
+  });
 
